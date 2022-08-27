@@ -398,14 +398,14 @@ html {
   background-color: var(--section-background-color);
 }
 
-.team-list {
+.team {
   display: flex;
 }
 
-.team-title {
+.team__title {
   margin-bottom: 10px;
 }
-.team-list .team-title {
+.team .team__title {
   width: 270px;
   font-weight: 500;
   font-size: 16px;
@@ -413,11 +413,11 @@ html {
   text-align: center;
   color: var(--title-text-color);
 }
-.section-title .team-title {
+.section-title .team__title {
   margin-bottom: 50px;
 }
 
-.team-job {
+.team__job {
   font-weight: 400;
   font-size: 16px;
   margin-bottom: 16px;
@@ -426,26 +426,29 @@ html {
   color: var(--primary-text-color);
 }
 
-.container-job {
+.job {
   padding: 30px 0;
 }
 
-.team-item {
+.team__item {
   background-color: var(--primaty-bg-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
 }
-.team-list .team-item:not(:last-child) {
+.team .team__item:not(:last-child) {
   margin-right: 30px;
 }
 
-.team-social-list {
+.social-list {
   display: flex;
   justify-content: center;
+}
+
+.team__social-list {
   gap: 10px;
 }
 
-.team-social-link {
+.social-list__link {
   width: 44px;
   height: 44px;
   border-radius: 50%;
@@ -457,12 +460,12 @@ html {
   transition-timing-function: var(--transition-timing-main);
   color: var(--main-icon-color);
 }
-.team-social-link:hover, .team-social-link:focus {
+.social-list__link:hover, .social-list__link:focus {
   background-color: var(--accent-color);
   color: var(--hero-text-color);
 }
 
-.team-icon {
+.social-list__icon {
   fill: currentColor;
 }
 
@@ -512,7 +515,7 @@ html {
   gap: 30px;
 }
 
-.clients-link {
+.clients-list__link {
   width: 170px;
   height: 92px;
   border: 1px solid #afb1b8;
@@ -525,12 +528,12 @@ html {
   transition-duration: 250ms;
   transition-timing-function: var(--transition-timing-main);
 }
-.clients-link:hover, .clients-link:focus {
+.clients-list__link:hover, .clients-list__link:focus {
   border: 1px solid var(--accent-color);
   color: var(--accent-color);
 }
 
-.clients-icon {
+.clients-list__icon {
   fill: currentColor;
 }
 
