@@ -15,13 +15,14 @@
   transition-timing-function: var(--transition-timing-main);
   color: var(--filterbutton-main-color);
   background-color: var(--filterbutton-bg-color);
+  &:hover,
+  &:focus {
+    color: var(--filterbutton-bg-color);
+    background-color: var(--filterbutton-secondbg-color);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
 }
-.filter-button:hover,
-.filter-button:focus {
-  color: var(--filterbutton-bg-color);
-  background-color: var(--filterbutton-secondbg-color);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
+
 .filter-button-list {
   display: flex;
   margin-bottom: 50px;
@@ -64,12 +65,13 @@
   transition-property: box-shadow;
   transition-duration: 250ms;
   transition-timing-function: var(--transition-timing-main);
+  &:hover,
+  &:focus {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+      1px 4px 6px rgba(0, 0, 0, 0.16);
+  }
 }
-.portfolio-link:hover,
-.portfolio-link:focus {
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    1px 4px 6px rgba(0, 0, 0, 0.16);
-}
+
 .portfolio-thumb {
   position: relative;
   overflow: hidden;
@@ -90,8 +92,8 @@
   transform: translatey(101%);
   transition-duration: 250ms;
   transition-timing-function: var(--transition-timing-main);
-}
-.portfolio-link:hover .description,
-.portfolio-link:focus .description {
-  transform: translatey(0);
+  .portfolio-link:hover &,
+  .portfolio-link:focus & {
+    transform: translatey(0);
+  }
 }

@@ -35,10 +35,11 @@
 .close-icon {
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
   fill: currentColor;
+  .hero-button-close:hover & {
+    fill: var(--accent-color);
+  }
 }
-.hero-button-close:hover .close-icon {
-  fill: var(--accent-color);
-}
+
 .modal-title {
   margin-bottom: 12px;
   font-weight: 700;
@@ -54,11 +55,22 @@
   border: 1px solid rgba(33, 33, 33, 0.2);
   transition: outline-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: 4px;
+  &:not(:focus):not(:placeholder-shown):valid {
+    background-color: transparent;
+  }
+  &:not(:focus):not(:placeholder-shown):invalid {
+    background-color: red;
+  }
+  &:focus {
+    outline-color: var(--accent-color);
+    cursor: pointer;
+  }
+  &:hover,
+  .comment-text:hover {
+    cursor: pointer;
+  }
 }
 
-.section-hero .input-name {
-  text-align: left;
-}
 .input-name {
   display: block;
   margin-bottom: 5px;
@@ -66,6 +78,9 @@
   line-height: 1.16;
   letter-spacing: 0.01em;
   color: var(--primary-text-color);
+  .section-hero & {
+    text-align: left;
+  }
 }
 
 .comment-text {
@@ -80,6 +95,9 @@
   border-radius: 4px;
   transition: outline-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   color: rgba(117, 117, 117, 0.5);
+  &:focus {
+    outline-color: var(--accent-color);
+  }
 }
 .policy-link {
   text-decoration-line: underline;
@@ -89,12 +107,7 @@
   color: red;
   display: none;
 }
-.input-form:not(:focus):not(:placeholder-shown):valid {
-  background-color: transparent;
-}
-.input-form:not(:focus):not(:placeholder-shown):invalid {
-  background-color: red;
-}
+
 .modal-button-close {
   display: inline-block;
   font-weight: 700;
@@ -116,20 +129,9 @@
   left: 12px;
   transform: translateY(-50%);
   color: var(--accent-color);
-}
-.input-form:focus {
-  outline-color: var(--accent-color);
-  cursor: pointer;
-}
-.input-form:hover,
-.comment-text:hover {
-  cursor: pointer;
-}
-.input-form:focus + .input-icon {
-  fill: var(--accent-color);
-}
-.comment-text:focus {
-  outline-color: var(--accent-color);
+  .input-form:focus + & {
+    fill: var(--accent-color);
+  }
 }
 
 /*.policy-text {
@@ -173,30 +175,35 @@
   font-size: 14px;
   line-height: 1.71;
   color: var(--primary-text-color);
+  & span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 15px;
+    margin-right: 5px;
+    border: 2px solid #212121;
+    border-radius: 3px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
 }
-.policy-text-main span {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 16px;
-  height: 15px;
-  margin-right: 5px;
-  border: 2px solid #212121;
-  border-radius: 3px;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
+
 .input-icon-main {
   fill: transparent;
+  .policy-input-main:checked + .policy-text-main & {
+    fill: var(--second-icon-color);
+    .policy-input-main:checked + .policy-text-main & {
+      fill: var(--second-icon-color);
+    }
+  }
 }
 .policy-input-main:checked + .policy-text-main span {
   background-color: var(--accent-color);
   border: none;
 }
-.policy-input-main:checked + .policy-text-main .input-icon-main {
-  fill: var(--second-icon-color);
-}
-.policy-text-second {
+
+/*.policy-text-second {
   display: flex;
   font-size: 14px;
   color: gray;
@@ -230,4 +237,4 @@
 }
 .policy-input-todo:checked + .policy-text-second::before {
   background-color: yellow;
-}
+}*/

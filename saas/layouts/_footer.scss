@@ -19,6 +19,9 @@
   color: var(--primaty-bg-color);
   transition-duration: 250ms;
   transition-timing-function: var(--transition-timing-main);
+    &:focus {
+    color: var(--accent-color);
+  }
 }
 .footer-contacts {
   font-style: normal;
@@ -27,13 +30,11 @@
   transition-duration: 250ms;
   transition-timing-function: var(--transition-timing-main);
   color: var(--footer-contacts-color);
+    &:focus {
+    color: var(--accent-color);
+  }
 }
-.map:focus {
-  color: var(--accent-color);
-}
-.footer-contacts:focus {
-  color: var(--accent-color);
-}
+
 .footer-logo {
   font-family: "Raleway";
   font-weight: 700;
@@ -75,9 +76,10 @@
   fill: var(--second-icon-color);
   transition-duration: 250ms;
   transition-timing-function: var(--transition-timing-main);
-}
-
-.join-link:hover,
-.join-link:focus {
+    &:hover,
+    &:focus {
   background: var(--filterbutton-secondbg-color);
 }
+}
+
+
