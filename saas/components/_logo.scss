@@ -1,16 +1,17 @@
-.header-logo,
-.footer-logo {
+.logo {
   text-decoration: none;
 }
-.header-logo {
+.logo {
   display: inline-block;
-  margin-right: 93px;
   font-family: "Raleway";
   font-weight: 700;
   font-size: 26px;
   line-height: 1.19;
-  color: var(--logo-primary-text);
+  color: var(--accent-color);
 }
-.logo-web {
+.navigation__logo {
+  margin-right: 93px;
+}
+.navigation__web {
   color: var(--accent-color);
 }
