@@ -653,6 +653,7 @@ html {
   transition-duration: 250ms;
   transition-timing-function: var(--transition-timing-main);
   color: var(--filterbutton-main-color);
+  border: none;
   background-color: var(--filterbutton-bg-color);
 }
 .filter-button:hover, .filter-button:focus {
