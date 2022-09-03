@@ -78,16 +78,17 @@ html {
 }
 
 .container {
-  width: 1200px;
+  /*width: 1200px;*/
+  width: 100%;
   padding: 0 15px;
   margin: 0 auto;
 }
 
-/*.container-second {
-  width: 1200px;
-  padding: 0 15px;
-  margin: 0 auto;
-}*/
+@media screen and (min-width: 480px) {
+  .container {
+    width: 480px;
+  }
+}
 body {
   font-family: "Roboto", sans-serif;
   color: var(--primary-text-color);
@@ -159,23 +160,41 @@ html {
   margin: -1px;
 }
 
-.hero-button {
-  display: border-box;
-  border: 0;
+.section-title {
+  margin-bottom: 50px;
   font-weight: 700;
-  font-size: 16px;
-  line-height: 1.87;
-  padding: 10px 32px;
-  letter-spacing: 0.06em;
-  color: var(--primaty-bg-color);
-  background-color: var(--accent-color);
-  border-radius: 4px;
-  cursor: pointer;
-  border: 0;
+  font-size: 36px;
+  line-height: 1.16;
+  text-align: center;
+  color: var(--title-text-color);
 }
-.hero-button:hover, .hero-button:focus {
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  border-radius: 4px;
+
+.section-hero {
+  text-align: center;
+  padding: 200px 0;
+  background-color: #2f303a;
+}
+
+@media screen and (min-width: 480px) {
+  .section-hero {
+    background-color: red;
+  }
+}
+.section-gallery {
+  padding: 94px 0;
+}
+
+.section-team {
+  padding: 94px 0;
+  background-color: var(--section-background-color);
+}
+
+.section-clients {
+  padding: 94px 0;
+}
+
+.section-portfolio {
+  padding: 94px 0;
 }
 
 .logo {
@@ -287,28 +306,52 @@ html {
   background-color: var(--accent-color);
 }
 
-.section-hero {
-  text-align: center;
-  padding: 200px 0;
-  background-color: #2f303a;
-}
-
 .hero-title {
-  width: 696px;
-  margin: auto;
-  margin-bottom: 30px;
+  /*width: 696px;*/
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
+  margin: auto;
+  margin-bottom: 30px;
   text-align: center;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--hero-text-color);
 }
 
+.hero-button {
+  display: border-box;
+  border: 0;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  padding: 10px 32px;
+  letter-spacing: 0.06em;
+  color: var(--primaty-bg-color);
+  background-color: var(--accent-color);
+  border-radius: 4px;
+  cursor: pointer;
+  border: 0;
+}
+.hero-button:hover, .hero-button:focus {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+}
+
+@media screen and (min-width: 480px) {
+  .hero-title {
+    text-align: center;
+    width: 360px;
+    font-size: 26px;
+    line-height: 1.61;
+    padding: 118 60 198 60;
+  }
+}
 .overlay {
-  height: 600px;
-  max-width: 1600px;
+  /* max-width: 1600px;
+  height: 600px;*/
+  width: 100%;
+  height: auto;
   margin-right: auto;
   margin-left: auto;
   background-repeat: no-repeat;
@@ -317,15 +360,12 @@ html {
   background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero-overlay.jpg);
 }
 
-.section-title {
-  margin-bottom: 50px;
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 1.16;
-  text-align: center;
-  color: var(--title-text-color);
+@media screen and (min-width: 480px) {
+  .overlay {
+    width: 480px;
+    height: 400px;
+  }
 }
-
 .section-features {
   padding: 94px 0;
 }
@@ -364,10 +404,6 @@ html {
   gap: 30px;
 }
 
-.section-gallery {
-  padding: 0 0 94px 0;
-}
-
 .gallery-list {
   display: flex;
   gap: 30px;
@@ -391,11 +427,6 @@ html {
   color: var(--filterbutton-bg-color);
   background: rgba(47, 48, 58, 0.8);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-.section-team {
-  padding: 94px 0;
-  background-color: var(--section-background-color);
 }
 
 .team {
@@ -503,10 +534,6 @@ html {
   list-style: none;
   background-color: yellow;
   display: none;
-}
-
-.section-clients {
-  padding: 94px 0;
 }
 
 .clients-list {
@@ -634,10 +661,6 @@ html {
 .footer-contacts:hover,
 .footer-contacts:focus {
   color: var(--accent-color);
-}
-
-.section-portfolio {
-  padding: 94px 0;
 }
 
 /* --- Filter Buttons ---  */

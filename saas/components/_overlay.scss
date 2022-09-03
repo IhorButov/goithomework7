@@ -1,6 +1,8 @@
 .overlay {
-  height: 600px;
-  max-width: 1600px;
+  /* max-width: 1600px;
+  height: 600px;*/
+  width: 100%;
+  height: auto;
   margin-right: auto;
   margin-left: auto;
   background-repeat: no-repeat;
@@ -12,4 +14,10 @@
       rgba(47, 48, 58, 0.4)
     ),
     url(../images/hero-overlay.jpg);
+}
+@media screen and (min-width: 480px) {
+  .overlay {
+    width: 480px;
+    height: 400px;
+  }
 }
